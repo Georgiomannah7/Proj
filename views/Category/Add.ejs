@@ -1,0 +1,19 @@
+<%- include('../includes/head.ejs') %>
+</head>
+<body>
+    <%- include('../includes/nav.ejs') %>
+
+    <form action="<%if(!editMode) {%>/Category/add<%} else {%>/Category/Upd/<%=c.name%><%}%>" method="post">
+       Name: <input type="text" name="name" value="<%if(editMode){%><%=c.name %><%}%>"> <br>
+       <hr>
+       Description: <input type="text" name="desc" value="<%if(editMode){%><%=c.description %><%}%>"> <br>
+       <hr>
+       <button type="submit" name="Add" value="submit"><%if(editMode){%>Update<%} else {%>Create <% } %></button>
+    </form>
+    <hr>
+    <form method="post" action="<%if(!editMode){%>Category/show<%} else {%>Category/Category/show <%}%>">
+        <button type="submit" name="show" > Show</button>
+    </form>
+
+    
+<%- include('../includes/end.ejs') %>    

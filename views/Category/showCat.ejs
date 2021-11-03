@@ -1,0 +1,8 @@
+<h1>Brands</h1>
+    <% if (cat) {%>
+        <h1><%= cat.name %></h1>
+        <h1><%= cat.description%></h1> 
+        <h1><%= cat.createdAt %></h1>        
+        <h1><%= cat.updatedAt %></h1>     
+        <% }%>
+<%- include('../includes/end.ejs') %>   

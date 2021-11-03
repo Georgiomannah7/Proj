@@ -1,0 +1,36 @@
+<%- include('../includes/head.ejs') %>
+</head>
+<body>
+    <%- include('../includes/nav.ejs') %>
+
+    <form action="<%if(!editMode) {%>/cars<%} else {%>/cars/Upd/<%=c.title %><%}%>" method="post">
+       Title: <input type="text" name="title" value="<%if(editMode){%><%=c.title %><%}%>"> <br>
+       <hr>
+       Description: <input type="text" name="desc" value="<%if(editMode){%><%=c.description %><%}%>"> <br>
+       <hr>
+       NbrOfRent: <input type="number" name="NbrOfRent" value="<%if(editMode){%><%=c.NbrOfRent %><%}%>"> <br>
+       <hr>
+       Image: <input type="text" name="image" value="<%if(editMode){%><%=c.Image %><%}%>"> <br>
+       <hr>
+       Brand: <input type="text" name="brand" value="<%if(editMode){%><%=c.brandName %><%}%>" > <br>
+       <hr>
+       Category: <input type="text" name="category" value="<%if(editMode){%><%=c.categoryName %><%}%>"> <br>
+       <button type="submit" name="Add" value="submit"><%if(editMode){%>Update <%} else {%> Create <% } %></button>
+    </form>
+<form action="/showCars" method="post">
+    <label>Enter a brand : </label>
+    <input type="text" name="brand"> <br>
+    <button type="submit">Show Cars</button>
+</form>
+<form action="/deleteCar" method="post">
+    Title:
+<input type="text" name="title"> <br>
+<button type="submit">Delete</button>
+</form>
+<form action="/cars/Upd" method="post">
+    Title:
+    <input type="text" name="title"> <br>
+    <button type="submit">Update</button>
+</form>
+    
+<%- include('../includes/end.ejs') %>    
